@@ -12,3 +12,12 @@ PoC app to listen and audit new Uniswap V2 pair shitcoins
    again and save last audit timestamp along with audit change log (if anything has changes). If after
    audit log change detection there are any tokens that match ape criteria, ape X WETH/USDC/USDT/DAI from
    wallet Y and send Telegram notification.
+
+Prerequisites:
+
+- Docker installed on local system
+
+Getting started:
+
+1. Alter configuration environment variables in docker-compose.override.yml
+2. Run docker-compose up -d in project folder
