@@ -20,4 +20,4 @@ Prerequisites:
 Getting started:
 
 1. Alter configuration environment variables in docker-compose.override.yml
-2. Run docker-compose up -d in project folder
+2. Run docker compose up -d in project folder
