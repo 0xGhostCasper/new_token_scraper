@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  mongo:
+    container_name: 'mongodb'
+    image: mongo
+    restart: always
+    ports:
+      - '27017:27017'
+    expose:
+      - '27017'
+
+  newtokensscraper:
+    container_name: 'newtokensscraper'
+    image: ${DOCKER_REGISTRY-}newtokensscraper
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      WS_PROVIDER_URL: ''
+      UNISWAP_V2_FACTORY_ADDRESS: ''
+      NODE_ENV: 'production'
+      MONGODB_CONNECTION_STRING: ''
+      TELEGRAM_BOT_TOKEN: ''
+      TELEGRAM_CHAT_ID: ''

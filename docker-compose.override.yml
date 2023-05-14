@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  mongo:
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: appusername
+      MONGO_INITDB_ROOT_PASSWORD: apppassword123!!
+    volumes:
+      - './data:/data/db'
+
+  newtokensscraper:
+    environment:
+      WS_PROVIDER_URL: '' # Alchemy or other websocket provider URL
+      UNISWAP_V2_FACTORY_ADDRESS: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f'
+      NODE_ENV: 'development'
+      MONGODB_CONNECTION_STRING: mongodb://appusername:apppassword123!!@mongo:27017/
+      TELEGRAM_BOT_TOKEN: '' # Talk to BothFather to create bot and get token
+      TELEGRAM_CHAT_ID: '' # Chat ID to send messages to. Create BOT in BotFather, start chat with bot and then go to https://api.telegram.org/bot<TOKEN>/getUpdates to check chat id
+    volumes:
+      - './data:/usr/src/app/logs'
